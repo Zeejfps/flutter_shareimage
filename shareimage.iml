@@ -12,8 +12,6 @@
       <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/shareimage/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/shareimage/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/shareimage/build" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/shareimage/example/build/app/intermediates/assets/debug/flutter_assets/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/shareimage/example/build/app/intermediates/flutter/debug/flutter_assets/packages" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Dart SDK" level="project" />

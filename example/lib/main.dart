@@ -49,12 +49,21 @@ class _CameraAppState extends State<CameraApp> {
           controller.value.aspectRatio,
           child: new CameraPreview(controller)),
       floatingActionButton: new FloatingActionButton(onPressed: (){
+
+        showDialog(context: context, builder: (BuildContext context){
+          return new Center(
+            child: new CircularProgressIndicator(),
+          );
+        });
+
         getApplicationDocumentsDirectory().then((dir){
           File picture = new File(dir.path+"/test.jpeg");
           if (picture.existsSync())
             picture.deleteSync();
           controller.takePicture(picture.path).then((_){
-            Share.share(picture.path);
+            Share.share(picture.path).then((_){
+              Navigator.pop(context);
+            });
           });
         });
       }),

@@ -17,9 +17,12 @@ public class SwiftShareimagePlugin: NSObject, FlutterPlugin {
         let imageToShare = [ image! ];
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = controller?.view // so that iPads won't crash
+        activityViewController.completionWithItemsHandler = {
+            activityViewController, success, items, error in
+            result(nil);
+        }
         // present the view controller
         controller?.present(activityViewController, animated: true, completion: nil)
-        result(1);
     }
     else {
         result(FlutterMethodNotImplemented);
