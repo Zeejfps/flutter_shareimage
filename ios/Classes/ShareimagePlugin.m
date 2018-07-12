@@ -1,5 +1,5 @@
 #import "ShareimagePlugin.h"
-#import <shareimage/shareimage-Swift.h>
+#import <shareimage-Swift.h>
 
 @implementation ShareimagePlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {

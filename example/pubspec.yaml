@@ -1,4 +1,5 @@
 name: shareimage_example
+author: Zeejfps
 description: Demonstrates how to use the shareimage plugin.
 
 dependencies:
