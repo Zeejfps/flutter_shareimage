@@ -13,15 +13,12 @@ public class SwiftShareimagePlugin: NSObject, FlutterPlugin {
         let controller = UIApplication.shared.keyWindow?.rootViewController;
         let args = call.arguments as! Dictionary<String, String>;
         let path = args["path"];
-        let image = UIImage(contentsOfFile: path ?? "");
-        let imageToShare = [ image! ];
-        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil);
+        //let image = UIImage(contentsOfFile: path ?? "");
+        let image = NSData(contentsOfFile: path ?? "");
+        //let imageToShare = [ image! ];
+        let activityViewController = UIActivityViewController(activityItems: [ image! ], applicationActivities: nil);
         activityViewController.popoverPresentationController?.sourceView = controller?.view; // so that iPads won't crash
         activityViewController.excludedActivityTypes = [UIActivityType.airDrop];
-        /*activityViewController.completionWithItemsHandler = { (activity, success, items, error) in
-            print(success ? "SUCCESS!" : "FAILURE");
-            result(nil);
-        }*/
         controller?.present(activityViewController, animated: true, completion: { () in
             result(nil);
         });
